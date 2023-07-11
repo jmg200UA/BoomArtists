@@ -1,3 +1,4 @@
+<!-- Header -->
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title class="ion-text-center">
@@ -6,11 +7,15 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- Contenido -->
 <ion-content>
+  <!-- Fondo animado -->
   <div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
-  <ion-card color="secondary" class="ion-text-center cartas">
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+
+  <!-- Apartados -->
+  <ion-card color="secondary" class="ion-text-center cartas" (click)="redireccionar('/dia1')">
     <ion-card-header>
       <ion-card-title>Día 1</ion-card-title>
     </ion-card-header>
@@ -19,7 +24,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card color="tertiary" class="ion-text-center cartas">
+  <ion-card color="tertiary" class="ion-text-center cartas" (click)="redireccionar('/dia2')">
     <ion-card-header>
       <ion-card-title>Día 2</ion-card-title>
     </ion-card-header>
@@ -28,7 +33,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card color="success" class="ion-text-center cartas">
+  <ion-card color="success" class="ion-text-center cartas" (click)="redireccionar('/dia3')">
     <ion-card-header>
       <ion-card-title>Día 3</ion-card-title>
     </ion-card-header>
@@ -37,3 +42,11 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
+<!-- Footer -->
+<ion-footer class="custom-footer">
+  <ion-toolbar>
+    <div class="footer-content">
+      <p>© 2023 BoomArtists. All rights reserved.</p>
+    </div>
+  </ion-toolbar>
+</ion-footer>
