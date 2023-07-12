@@ -23,6 +23,7 @@ const routes: Routes = [
     path: 'dia3',
     loadChildren: () => import('./pages/dia3/dia3.module').then( m => m.Dia3PageModule)
   },
+
 ];
 
 @NgModule({

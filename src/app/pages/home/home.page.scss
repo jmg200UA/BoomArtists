@@ -59,12 +59,17 @@
 
 //Cartas apartados
 .cartas{
-  border: 1px solid #000;
+  border: 2px solid #000;
+}
+
+.cartas:hover{
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 ion-card{
   height: 110px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 //Footer
@@ -74,3 +79,4 @@ ion-card{
   align-items: center;
   height: 100%;
 }
+

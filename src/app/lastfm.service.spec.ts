@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpService } from './http.service';
+import { LastfmService } from './lastfm.service';
 
-describe('HttpService', () => {
-  let service: HttpService;
+describe('LastfmService', () => {
+  let service: LastfmService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HttpService);
+    service = TestBed.inject(LastfmService);
   });
 
   it('should be created', () => {

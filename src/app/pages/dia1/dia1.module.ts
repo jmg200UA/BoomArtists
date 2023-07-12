@@ -8,6 +8,8 @@ import { Dia1PageRoutingModule } from './dia1-routing.module';
 
 import { Dia1Page } from './dia1.page';
 
+import { LastfmService } from 'src/app/lastfm.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,7 @@ import { Dia1Page } from './dia1.page';
     IonicModule,
     Dia1PageRoutingModule
   ],
-  declarations: [Dia1Page]
+  declarations: [Dia1Page],
+  providers: [LastfmService]
 })
 export class Dia1PageModule {}

@@ -1,0 +1,20 @@
+.round-image {
+    width: 70px; /* Ajusta el tamaño según tus necesidades */
+    height: 70px; /* Ajusta el tamaño según tus necesidades */
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+.round-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cantante{
+    height: 115px;
+}
+
+.nombreartista{
+    margin-top: 10px;
+}

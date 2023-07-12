@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  cardHovered: boolean = false;
 
   constructor(private router: Router) {}
 
