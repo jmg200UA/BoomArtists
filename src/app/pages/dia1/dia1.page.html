@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
-      Dia 1 🎵
+      Día 1 🎵
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -23,19 +23,24 @@
       </ion-col>
     </ion-row>
   </ion-grid> Otra organizacion de las canciones -->
-  
-  <ion-card>
-    <ion-card-content class="cantante">
-      <ion-thumbnail>
-        <div class="round-image">
-          <img [src]="'https://www.rionegro.com.ar/wp-content/uploads/2020/09/unnamed-5.jpg'" alt="Foto del artista" class="small-image">
-        </div>
-      </ion-thumbnail>
-      <ion-card-header class="nombreartista">
-        <ion-card-title>Duki</ion-card-title>
-      </ion-card-header>
-    </ion-card-content>
-    <ion-list *ngIf="showTrackList">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let cantante of cantantes">
+        <ion-card class="cardartista">
+          <ion-card-header class="round-image">
+            <ion-img [src]="cantante.image" class="round-image imagen-cantante"></ion-img>
+          </ion-card-header>
+          <ion-card-content class="nomcantante">
+            {{ cantante.title }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    <!-- Lista para mostrar las 5 canciones más escuchadas -->
+    <!-- <ion-list *ngIf="showTrackList">
       <ion-item *ngFor="let track of topTracks; let i = index">
         <ion-label>
           <h2>{{ i + 1 }}. {{ track.name }}</h2>
@@ -48,6 +53,5 @@
     <ion-button expand="full" (click)="toggleTrackList()">
       {{ showTrackList ? 'Ocultar canciones' : 'Mostrar canciones' }}
       <ion-icon slot="end" [name]="showTrackList ? 'chevron-up' : 'chevron-down'"></ion-icon>
-    </ion-button>
-  </ion-card>
+    </ion-button> -->
 </ion-content>
