@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Artista
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-content style="display: flex; align-items: center;">
+    <ion-thumbnail style="flex-basis: 33%;">
+      <div style="width: 100%;">
+        <img [src]="artista.image" alt="Foto del artista" style="width: 100%;">
+      </div>
+    </ion-thumbnail>
+    <ion-card-header style="flex-basis: 67%;">
+      <ion-card-title>{{cantante}}</ion-card-title>
+    </ion-card-header>
+  </ion-card-content>
+
+    <!-- Lista para mostrar las 5 canciones más escuchadas -->
+    <ion-list>
+      <ion-item *ngFor="let track of topTracks; let i = index">
+        <ion-label>
+          <h2>{{ i + 1 }}. {{ track.name }}</h2>
+        </ion-label>
+        <ion-thumbnail slot="start">
+          <img [src]="track.image[1]['#text']">
+        </ion-thumbnail>
+        <!-- <audio controls>
+          <source [src]="track.url" type="audio/mpeg">
+        </audio> -->
+      </ion-item>
+    </ion-list>
+    <!-- <ion-button expand="full" (click)="toggleTrackList()">
+      {{ showTrackList ? 'Ocultar canciones' : 'Mostrar canciones' }}
+      <ion-icon slot="end" [name]="showTrackList ? 'chevron-up' : 'chevron-down'"></ion-icon>
+    </ion-button> -->
+</ion-content>

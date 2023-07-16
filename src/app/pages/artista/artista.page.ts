@@ -4,21 +4,17 @@ import { Router } from '@angular/router';
 import { BoomartistsService } from 'src/app/boomartists.service';
 
 @Component({
-  selector: 'app-dia1',
-  templateUrl: './dia1.page.html',
-  styleUrls: ['./dia1.page.scss'],
+  selector: 'app-artista',
+  templateUrl: './artista.page.html',
+  styleUrls: ['./artista.page.scss'],
 })
-export class Dia1Page implements OnInit {
+export class ArtistaPage implements OnInit {
   topTracks: any[] = [];
   showTrackList: boolean = false;
+  cantante: string = "";
+  artista: any;
 
-  constructor(private lastfmService: LastfmService,
-              private boomartistsService: BoomartistsService,
-              private router: Router) { }
-
-  ngOnInit() {
-  }
-
+  //Array cantantes
   cantantes = [
     { title: 'Duki', image: 'https://www.rionegro.com.ar/wp-content/uploads/2020/09/unnamed-5.jpg' },
     { title: 'Farruko', image: 'https://yt3.googleusercontent.com/hzEyh_JV5MX3m1ragdHDs-Kl7crx660ahK2fkvd4HgZxes3uAV9KNRjLOjC1qk8As7OMdRNl0D0=s900-c-k-c0x00ffffff-no-rj' },
@@ -38,21 +34,33 @@ export class Dia1Page implements OnInit {
     { title: 'Almacor', image: 'https://i0.wp.com/loblanc.info/wp-content/uploads/2021/03/almacor.jpg?fit=300%2C200&ssl=1' },
   ];
 
-  ionViewDidEnter(){
-    const artist = 'Duki';
-    this.lastfmService.getTopTracks(artist)
+  constructor(private lastfmService: LastfmService,
+              private boomartistsService: BoomartistsService,
+              private router: Router) { }
+
+  ngOnInit() {
+    this.cantante= this.boomartistsService.getStringValue();
+    console.log("Entra en artista con: ", this.cantante);
+
+    this.artista = this.cantantes.find(item => item.title === this.cantante);
+    console.log("Artista encontrado: ", this.artista);
+
+    this.lastfmService.getTopTracks(this.cantante)
       .then(tracks => this.topTracks = tracks)
       .catch(error => console.error(error));
   }
 
-  toggleTrackList() {
-    this.showTrackList = !this.showTrackList;
-  }
 
-  //Funcion para cambiar el valor del cantante al seleccionarlo para poderlo pasar por parámetro
-  cambiarCantante(cantante: string){
-    this.boomartistsService.setStringValue(cantante);
-    this.router.navigate(['/artista']);
-  }
+  // ionViewDidEnter(){
+  //   this.cantante= this.boomartistsService.getStringValue();
+  //   const artist = this.cantante;
+  //   this.lastfmService.getTopTracks(artist)
+  //     .then(tracks => this.topTracks = tracks)
+  //     .catch(error => console.error(error));
+  // }
+
+  // toggleTrackList() {
+  //   this.showTrackList = !this.showTrackList;
+  // }
 
 }
