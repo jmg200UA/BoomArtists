@@ -13,6 +13,8 @@ export class ArtistaPage implements OnInit {
   showTrackList: boolean = false;
   cantante: string = "";
   artista: any;
+  topYT: any[] = [];
+  videoLink: string = '';
 
   //Array cantantes
   cantantes = [
@@ -38,16 +40,41 @@ export class ArtistaPage implements OnInit {
               private boomartistsService: BoomartistsService,
               private router: Router) { }
 
+  //Booleano para cargar los contenidos solo 1 vez
+  dataLoaded = false;
+
   ngOnInit() {
-    this.cantante= this.boomartistsService.getStringValue();
-    console.log("Entra en artista con: ", this.cantante);
+    if (!this.dataLoaded) {
+      //Coger nombre y foto artista
+      this.cantante = this.boomartistsService.getStringValue();
+      console.log('Entra en artista con: ', this.cantante);
 
-    this.artista = this.cantantes.find(item => item.title === this.cantante);
-    console.log("Artista encontrado: ", this.artista);
+      this.artista = this.cantantes.find(
+        (item) => item.title === this.cantante
+      );
+      console.log('Artista encontrado: ', this.artista);
 
-    this.lastfmService.getTopTracks(this.cantante)
-      .then(tracks => this.topTracks = tracks)
-      .catch(error => console.error(error));
+      //Llamadas servicios
+      this.lastfmService
+        .getTopTracks(this.cantante)
+        .then((tracks) => (this.topTracks = tracks))
+        .then(() => {
+          console.log("Top tracks al entrar: ", this.topTracks);
+
+          this.topTracks.forEach((track) => {
+            // Hacer algo con el elemento
+            this.lastfmService
+              .getYT(this.cantante + track.name)
+              .then((track) => this.topYT.push(track))
+              .catch((error) => console.error(error));
+            console.log(track);
+          });
+          console.log('Top YT: ', this.topYT);
+        })
+        .catch((error) => console.error(error));
+
+      this.dataLoaded = true;
+    }
   }
 
 
@@ -57,6 +84,12 @@ export class ArtistaPage implements OnInit {
   //   this.lastfmService.getTopTracks(artist)
   //     .then(tracks => this.topTracks = tracks)
   //     .catch(error => console.error(error));
+  // }
+
+  // preview(cancion: string){
+  //   this.lastfmService.getTopTracks(cancion)
+  //   .then(track => this.previews = track)
+  //   .catch(error => console.error(error));
   // }
 
   // toggleTrackList() {

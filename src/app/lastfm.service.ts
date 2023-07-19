@@ -19,4 +19,35 @@ export class LastfmService {
       })
       .catch(error => console.error(error));
   }
+
+  //Api Deezer
+  // getTrack(track: string){
+  //   console.log("Track que llega: ", track);
+  //   const url = `https://api.deezer.com/search?q=${track}`;
+  //   return axios.get(url)
+  //     .then(response => {
+  //       const track = response.data;
+  //       console.log(response.data);
+  //       return track;
+  //     })
+  //     .catch(error => console.error(error));
+  // }
+
+  //key YT
+  private keyyt= 'AIzaSyDSDarcmKjKbcG4aXu1cNMl4wsj6niWVro';
+
+  getYT(parametro: string){
+    console.log("Parámetro que llega: ", parametro);
+    // parametro = artista + cancion
+    const url = `https://youtube.googleapis.com/youtube/v3/search?q=${parametro}&key=${this.keyyt}&part=snippet`;
+    return axios.get(url)
+      .then(response => {
+        const ytcontent = response.data;
+        console.log(response.data);
+        return ytcontent;
+      })
+      .catch(error => console.error(error));
+  }
+
+
 }
