@@ -22,8 +22,22 @@ export class LastfmService {
       .catch(error => console.error(error));
   }
 
+  //Api Deezer
+  getTrack(track: string){
+    console.log("Track que llega Deezer: ", track);
+    const url = `https://api.deezer.com/search?q=${track}`;
+    return axios.get(url)
+      .then(response => {
+        const track = response.data;
+        console.log(response.data);
+        return track;
+      })
+      .catch(error => console.error(error));
+  }
+
+
   //key YT
-  private keyyt= 'AIzaSyDvoA0IhJFERT2ykfbto8hWzvN_t-9cOeQ';
+  private keyyt= 'AIzaSyAI0I07IsFpWOHZU7-DlE-NljMr0l-ZGoQ';
 
   getYT(parametro: string){
     console.log("Parámetro que llega: ", parametro);
@@ -47,7 +61,7 @@ export class LastfmService {
     const headers = {
       'Authorization': `Bearer ${this.apiKeyDZ}`
     };
-    
+
     return axios.get(url, { headers })
       .then(response => {
         const canciones = response.data;

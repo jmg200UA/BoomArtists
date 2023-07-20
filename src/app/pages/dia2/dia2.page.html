@@ -4,15 +4,25 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
-      Dia 2 🎵
+      Día 2 🎵
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dia2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let cantante of cantantes">
+        <ion-card class="cardartista" (click)="cambiarCantante(cantante.title)">
+          <ion-card-header class="round-image">
+            <ion-img [src]="cantante.image" class="round-image imagen-cantante"></ion-img>
+          </ion-card-header>
+          <ion-card-content class="nomcantante">
+            {{ cantante.title }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

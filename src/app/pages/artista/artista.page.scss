@@ -5,3 +5,13 @@
 .titulo{
     font-weight: bold;
 }
+
+.item{
+  display: flex;
+  flex-direction: column;
+}
+
+.cancion{
+  display: flex;
+  flex-direction: row;
+}

@@ -29,7 +29,7 @@
 //Fondo animado
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  background-image: linear-gradient(-60deg, rgb(221, 137, 201) 50%, rgb(255, 255, 255) 50%);
   bottom:0;
   left:-50%;
   opacity:.5;
@@ -59,8 +59,11 @@
 
 //Cartas apartados
 .cartas{
-  border: 2px solid #000;
+  border: 5px solid #fff;
+  color: #FF4977;
+  background-color: #f5f2f5;
 }
+
 
 .cartas:hover{
   transform: scale(1.05);
@@ -78,5 +81,21 @@ ion-card{
   justify-content: center;
   align-items: center;
   height: 100%;
+  color:rgb(15, 3, 44);
 }
 
+
+//Toolbar header
+.toolbar{
+  background-color: #fff;
+  color:rgb(15, 3, 44);
+  position: relative;
+}
+
+.title{
+  color:rgb(15, 3, 44);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

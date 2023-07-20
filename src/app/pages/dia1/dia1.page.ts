@@ -38,16 +38,6 @@ export class Dia1Page implements OnInit {
     { title: 'Almacor', image: 'https://i0.wp.com/loblanc.info/wp-content/uploads/2021/03/almacor.jpg?fit=300%2C200&ssl=1' },
   ];
 
-  ionViewDidEnter(){
-    const artist = 'Duki';
-    this.lastfmService.getTopTracks(artist)
-      .then(tracks => this.topTracks = tracks)
-      .catch(error => console.error(error));
-  }
-
-  toggleTrackList() {
-    this.showTrackList = !this.showTrackList;
-  }
 
   //Funcion para cambiar el valor del cantante al seleccionarlo para poderlo pasar por parámetro
   cambiarCantante(cantante: string){
