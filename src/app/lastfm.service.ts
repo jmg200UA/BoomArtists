@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -20,21 +22,8 @@ export class LastfmService {
       .catch(error => console.error(error));
   }
 
-  //Api Deezer
-  // getTrack(track: string){
-  //   console.log("Track que llega: ", track);
-  //   const url = `https://api.deezer.com/search?q=${track}`;
-  //   return axios.get(url)
-  //     .then(response => {
-  //       const track = response.data;
-  //       console.log(response.data);
-  //       return track;
-  //     })
-  //     .catch(error => console.error(error));
-  // }
-
   //key YT
-  private keyyt= 'AIzaSyDSDarcmKjKbcG4aXu1cNMl4wsj6niWVro';
+  private keyyt= 'AIzaSyDvoA0IhJFERT2ykfbto8hWzvN_t-9cOeQ';
 
   getYT(parametro: string){
     console.log("Parámetro que llega: ", parametro);
@@ -49,5 +38,31 @@ export class LastfmService {
       .catch(error => console.error(error));
   }
 
+  private apiKeyDZ = '5a2cfbe4ac9460853ce82b03d215f7b7';
+
+  /* Metodo que busca la cancion en deezer
+  buscaCancion(nombreCancion: string){
+    const url = `http://localhost:3000/deezer-api/search?q=track:"${nombreCancion}"`;
+
+    const headers = {
+      'Authorization': `Bearer ${this.apiKeyDZ}`
+    };
+    
+    return axios.get(url, { headers })
+      .then(response => {
+        const canciones = response.data;
+
+        console.log('AQUI ENTRO!!', canciones);
+
+        if(canciones.length > 0 ){
+          const cancionSeleccionada = canciones[0];
+
+          return cancionSeleccionada.preview;
+        }else{
+          return null
+        }
+      })
+      .catch(error => console.error(error));
+  }*/
 
 }

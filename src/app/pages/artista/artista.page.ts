@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LastfmService } from 'src/app/lastfm.service';
 import { Router } from '@angular/router';
 import { BoomartistsService } from 'src/app/boomartists.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-artista',
@@ -14,7 +16,8 @@ export class ArtistaPage implements OnInit {
   cantante: string = "";
   artista: any;
   topYT: any[] = [];
-  videoLink: string = '';
+  youtubeLink: string = 'https://www.youtube.com/watch?v=FRthkpJ_NFo&ab_channel=Duki';
+  previewUrl: string[] = [];
 
   //Array cantantes
   cantantes = [
@@ -38,7 +41,9 @@ export class ArtistaPage implements OnInit {
 
   constructor(private lastfmService: LastfmService,
               private boomartistsService: BoomartistsService,
-              private router: Router) { }
+              private router: Router,
+              private sanitizer: DomSanitizer,
+              private http: HttpClient) { }
 
   //Booleano para cargar los contenidos solo 1 vez
   dataLoaded = false;
@@ -68,6 +73,13 @@ export class ArtistaPage implements OnInit {
               .then((track) => this.topYT.push(track))
               .catch((error) => console.error(error));
             console.log(track);
+
+            //Intento de usar el deezer para la preview
+            //this.lastfmService
+              //.buscaCancion(track.name)
+              //.then((track) => this.previewUrl.push(track))
+              //.catch((error) => console.error(error));
+            //console.log(track);
           });
           console.log('Top YT: ', this.topYT);
         })
@@ -76,7 +88,6 @@ export class ArtistaPage implements OnInit {
       this.dataLoaded = true;
     }
   }
-
 
   // ionViewDidEnter(){
   //   this.cantante= this.boomartistsService.getStringValue();

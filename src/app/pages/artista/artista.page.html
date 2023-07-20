@@ -25,10 +25,16 @@
     <ion-list>
       <ion-item *ngFor="let track of topTracks; let i = index">
         <ion-label>
-          <h2>{{ i + 1 }}. {{ track.name }}</h2>
+          <h2 class="titulo">{{ i + 1 }}. {{ track.name }}</h2>
+          <!-- <div *ngIf="previewUrl">
+            <audio controls [src]="previewUrl"></audio>
+          </div>
+          <div *ngIf="!previewUrl">
+            <p>No se encontró la canción con el título proporcionado.</p>
+          </div> -->
         </ion-label>
         <ion-thumbnail slot="start">
-          <img [src]="track.image[1]['#text']">
+          
         </ion-thumbnail>
         <!-- <iframe width="220" height="100" src="https://www.youtube.com/embed/FRthkpJ_NFo" frameborder="0" allowfullscreen></iframe> -->
         <!-- <audio controls>
