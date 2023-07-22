@@ -24,6 +24,9 @@
     <!-- Lista para mostrar las 5 canciones más escuchadas -->
     <ion-list>
       <ion-item *ngFor="let track of topTracks; let i = index; let j = index">
+        <ion-thumbnail slot="start">
+          <img [src]="topYT[j]?.items[0].snippet.thumbnails.default.url" alt="Imagen track">
+        </ion-thumbnail>
         <ion-label>
           <h2 class="titulo">{{ i + 1}}. {{ track.name }}</h2>
           <div *ngIf="previewUrl">
@@ -32,12 +35,9 @@
           <div *ngIf="!previewUrl">
             <p>No se encontró la canción con el título proporcionado.</p>
           </div>
-        </ion-label>
-        <ion-thumbnail slot="start">
-          <img [src]="topYT[j]?.items[0].snippet.thumbnails.default.url" alt="Imagen track">
-        </ion-thumbnail>
-        <ion-button (click)="toggleVideo($event)" [id]="i" >{{ visibilidad[i].visible }}</ion-button>
-        <iframe *ngIf="visibilidad[i].visible==='Ocultar'" width="220" height="100" src="https://www.youtube.com/embed/FRthkpJ_NFo" frameborder="0" allowfullscreen></iframe>
+          <ion-button (click)="toggleVideo($event)" [id]="i" >{{ visibilidad[i].visible }}</ion-button>
+            <iframe *ngIf="visibilidad[i].visible==='Ocultar'; let videoId of youtubeID" width="220" height="100" src="hola/videoId[j]" frameborder="0" allowfullscreen></iframe>
+          </ion-label>
       </ion-item>
     </ion-list>
     <!-- <ion-button expand="full" (click)="toggleTrackList()">

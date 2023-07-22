@@ -19,6 +19,7 @@ export class ArtistaPage implements OnInit {
   youtubeLink: string = 'https://www.youtube.com/watch?v=FRthkpJ_NFo&ab_channel=Duki';
   previewUrl: string[] = [];
   indice = 0;
+  youtubeID: string[] = [];
 
   //Array cantantes
   cantantes = [
@@ -104,13 +105,17 @@ export class ArtistaPage implements OnInit {
             // Funcion YT
             this.lastfmService
               .getYT(this.cantante + this.topTracks[i].name)
-              .then((track) => this.topYT[i]= track)
+              .then((track) => this.topYT[i] = track)
+              .then(() => {
+                this.youtubeID[i] = this.topYT[i].items[0].id.videoId;
+              })
               .catch((error) => console.error(error));
           }
 
 
           console.log("Preview array :", this.previewUrl);
           console.log('Top YT: ', this.topYT);
+          console.log('Enlaces de VideosId: ', this.youtubeID);
         })
         .catch((error) => console.error(error));
 
@@ -129,8 +134,6 @@ export class ArtistaPage implements OnInit {
     }
     else this.visibilidad[idBotonClicado].visible = "Ocultar";
     console.log("Estado visibilidad boton ", idBotonClicado, " es : ", this.visibilidad[idBotonClicado].visible);
-
-
   }
 
   // ionViewDidEnter(){

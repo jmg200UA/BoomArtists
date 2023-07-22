@@ -37,7 +37,7 @@ export class LastfmService {
 
 
   //key YT
-  private keyyt= 'AIzaSyAI0I07IsFpWOHZU7-DlE-NljMr0l-ZGoQ';
+  private keyyt= 'AIzaSyDvoA0IhJFERT2ykfbto8hWzvN_t-9cOeQ';
 
   getYT(parametro: string){
     console.log("Parámetro que llega: ", parametro);
