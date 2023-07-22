@@ -19,7 +19,7 @@ export class ArtistaPage implements OnInit {
   youtubeLink: string = 'https://www.youtube.com/watch?v=FRthkpJ_NFo&ab_channel=Duki';
   previewUrl: string[] = [];
   indice = 0;
-  youtubeID: string[] = [];
+  youtubeID: any[] = [];
 
   //Array cantantes
   cantantes = [
@@ -107,7 +107,7 @@ export class ArtistaPage implements OnInit {
               .getYT(this.cantante + this.topTracks[i].name)
               .then((track) => this.topYT[i] = track)
               .then(() => {
-                this.youtubeID[i] = this.topYT[i].items[0].id.videoId;
+                this.youtubeID[i] =this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.topYT[i].items[0].id.videoId);
               })
               .catch((error) => console.error(error));
           }

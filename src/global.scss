@@ -30,9 +30,13 @@
 @import 'tailwindcss/utilities';
 
 
-
 ion-footer {
-  --ion-background-color: #3880ff;
+  --ion-background-color: #b355a2;
+  --ion-text-color: white;
+}
+
+ion-header {
+  --ion-background-color: #b355a2;
   --ion-text-color: white;
 }
 

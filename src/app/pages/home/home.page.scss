@@ -81,21 +81,22 @@ ion-card{
   justify-content: center;
   align-items: center;
   height: 100%;
-  color:rgb(15, 3, 44);
 }
-
 
 //Toolbar header
 .toolbar{
-  background-color: #fff;
-  color:rgb(15, 3, 44);
+  // background-color: #fff;
+  // color:rgb(15, 3, 44);
+  color: #fff;
   position: relative;
 }
 
 .title{
-  color:rgb(15, 3, 44);
+  //color:rgb(15, 3, 44);
+  //color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+

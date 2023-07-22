@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar class="toolbar">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">
+    <ion-title class="ion-text-center title">
       Artista
     </ion-title>
   </ion-toolbar>
@@ -30,14 +30,17 @@
         <ion-label>
           <h2 class="titulo">{{ i + 1}}. {{ track.name }}</h2>
           <div *ngIf="previewUrl">
-            <audio controls [src]="previewUrl[j]"></audio>
+            <audio controls [src]="previewUrl[j]" style="width: 180px; height: 30px;"></audio>
           </div>
           <div *ngIf="!previewUrl">
             <p>No se encontró la canción con el título proporcionado.</p>
           </div>
-          <ion-button (click)="toggleVideo($event)" [id]="i" >{{ visibilidad[i].visible }}</ion-button>
-            <iframe *ngIf="visibilidad[i].visible==='Ocultar'; let videoId of youtubeID" width="220" height="100" src="hola/videoId[j]" frameborder="0" allowfullscreen></iframe>
-          </ion-label>
+          <div class="flex items-center justify-center h-screen">
+            <ion-button class="center" (click)="toggleVideo($event)" [id]="i">{{ visibilidad[i].visible }}</ion-button>
+            <iframe class="my-100" *ngIf="visibilidad[i].visible==='Ocultar';" width="200" height="100" [src]="youtubeID[i]"
+              frameborder="0" allowfullscreen></iframe>
+          </div>
+        </ion-label>
       </ion-item>
     </ion-list>
     <!-- <ion-button expand="full" (click)="toggleTrackList()">
@@ -45,3 +48,11 @@
       <ion-icon slot="end" [name]="showTrackList ? 'chevron-up' : 'chevron-down'"></ion-icon>
     </ion-button> -->
 </ion-content>
+<!-- Footer -->
+<ion-footer class="custom-footer">
+  <ion-toolbar>
+    <div class="footer-content">
+      <p><small>© 2023 BoomArtists. All rights reserved.</small></p>
+    </div>
+  </ion-toolbar>
+</ion-footer>

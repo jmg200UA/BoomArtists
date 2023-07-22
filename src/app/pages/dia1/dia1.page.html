@@ -1,15 +1,19 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar class="toolbar">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">
+    <ion-title class="ion-text-center title">
       Día 1 🎵
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <!-- Fondo animado -->
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
 
   <ion-grid>
     <ion-row>
@@ -26,3 +30,11 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+<!-- Footer -->
+<ion-footer class="custom-footer">
+  <ion-toolbar>
+    <div class="footer-content">
+      <p><small>© 2023 BoomArtists. All rights reserved.</small></p>
+    </div>
+  </ion-toolbar>
+</ion-footer>
