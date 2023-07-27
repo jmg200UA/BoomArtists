@@ -95,11 +95,11 @@ export class ArtistaPage implements OnInit {
           console.log("Top tracks al entrar: ", this.topTracks);
 
           for(let i=0; i<this.topTracks.length;i++){
-            // Funcion Deezer
-            this.lastfmService
-              .getTrack(this.topTracks[i].name)
-              .then((trackData) => this.previewUrl[i]=trackData.data[0].preview)
-              .catch((error) => console.error(error));
+            // Funcion Deezer (comentamos para prod por las CORS)
+            // this.lastfmService
+            //   .getTrack(this.topTracks[i].name)
+            //   .then((trackData) => this.previewUrl[i]=trackData.data[0].preview)
+            //   .catch((error) => console.error(error));
 
 
             // Funcion YT
@@ -113,7 +113,7 @@ export class ArtistaPage implements OnInit {
           }
 
 
-          console.log("Preview array :", this.previewUrl);
+          //console.log("Preview array :", this.previewUrl);
           console.log('Top YT: ', this.topYT);
           console.log('Enlaces de VideosId: ', this.youtubeID);
         })

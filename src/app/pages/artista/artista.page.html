@@ -29,9 +29,9 @@
         </ion-thumbnail>
         <ion-label>
           <h2 class="titulo">{{ i + 1}}. {{ track.name }}</h2>
-          <div *ngIf="previewUrl">
+          <!-- <div *ngIf="previewUrl">
             <audio controls [src]="previewUrl[j]" style="width: 180px; height: 30px;"></audio>
-          </div>
+          </div> -->
           <div *ngIf="!previewUrl">
             <p>No se encontró la canción con el título proporcionado.</p>
           </div>
