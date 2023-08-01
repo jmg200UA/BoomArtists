@@ -12,7 +12,7 @@ export class LastfmService {
   constructor() { }
 
   getTopTracks(artist: string){
-    const url = `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=${this.apiKey}&format=json`;
+    const url = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=${this.apiKey}&format=json`;
     return axios.get(url)
       .then(response => {
         const tracks = response.data.toptracks.track.slice(0, 5);
