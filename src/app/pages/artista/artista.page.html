@@ -35,7 +35,7 @@
           <div *ngIf="!previewUrl">
             <p>No se encontró la canción con el título proporcionado.</p>
           </div>
-          <div class="flex items-center justify-center h-screen">
+          <div>
             <ion-button class="center" (click)="toggleVideo($event)" [id]="i">{{ visibilidad[i].visible }}</ion-button>
             <iframe class="my-100" *ngIf="visibilidad[i].visible==='Ocultar';" width="200" height="100" [src]="youtubeID[i]"
               frameborder="0" allowfullscreen></iframe>

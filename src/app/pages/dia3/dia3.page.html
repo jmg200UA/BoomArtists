@@ -10,11 +10,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <!-- Fondo animado -->
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let cantante of cantantes">
-        <ion-card class="cardartista" (click)="cambiarCantante(cantante.title)">
+      <ion-col class="col" size="6" *ngFor="let cantante of cantantes">
+        <ion-card class="cardartista col" (click)="cambiarCantante(cantante.title)">
           <ion-card-header class="round-image">
             <ion-img [src]="cantante.image" class="round-image imagen-cantante"></ion-img>
           </ion-card-header>
