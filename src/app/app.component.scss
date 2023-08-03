@@ -9,11 +9,11 @@ ion-header {
 }
 
 .pags{
-  background-color: #00000083;
+  --ion-background-color: rgba(0, 0, 0, 0.5);
 }
 
 ion-list {
-  --ion-background-color: rgba(0, 0, 0, 0.8);
+  --ion-background-color: rgba(0, 0, 0, 0.5);
   --ion-text-color: white;
   height: 200px;
   margin-top: -10px;
@@ -21,5 +21,9 @@ ion-list {
 
 ion-item, ion-title{
   text-align: center;
+}
+
+ion-menu{
+  --ion-background-color: rgba(0, 0, 0, 0.5);
 }
 

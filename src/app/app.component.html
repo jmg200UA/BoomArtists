@@ -6,8 +6,8 @@
           <ion-title>Menú</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="pags">
-        <ion-list>
+      <ion-content>
+        <ion-list class="pags">
           <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
             <ion-item  [routerLink]="[page.url]" routerDirection="root" [class.active]="currentPage === page.url">
               <ion-label>{{ page.title }}</ion-label>
