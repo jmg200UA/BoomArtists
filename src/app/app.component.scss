@@ -1,13 +1,25 @@
 ion-footer {
-  --ion-background-color: #b355a2;
+  --ion-background-color: #000000;
   --ion-text-color: white;
 }
 
 ion-header {
-  --ion-background-color: #b355a2;
+  --ion-background-color: #000000;
   --ion-text-color: white;
 }
 
 .pags{
-  background-color: #f2c7ea;
+  background-color: #00000083;
 }
+
+ion-list {
+  --ion-background-color: rgba(0, 0, 0, 0.8);
+  --ion-text-color: white;
+  height: 200px;
+  margin-top: -10px;
+}
+
+ion-item, ion-title{
+  text-align: center;
+}
+

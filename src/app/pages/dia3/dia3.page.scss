@@ -13,11 +13,12 @@ font-weight: bold;
 }
 
 .cardartista{
-box-shadow: 10px 10px 20px rgba(0, 0, 0, 1);
+background-color: rgba(255, 255, 255, 0.8);
+box-shadow: 10px 30px 20px rgba(0, 0, 0, 2);
 height: 120px;
 width: 120px;
 border-radius: 50%;
-border: solid 2px #000;
+border: solid 1px #000;
 }
 
 .imagen-cantante{
@@ -32,13 +33,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 100%;
-color: #fff;
-font-weight: bolder;
-font-family: "Luminari, fantasy";
-color: transparent;
--webkit-text-fill-color: #fff; /* Relleno blanco (para navegadores basados en WebKit) */
--webkit-text-stroke-width: 0.2px; /* Ancho del borde */
--webkit-text-stroke-color: #000; /* Color del borde (para navegadores basados en WebKit) */
 }
 
 //Toolbar header
@@ -69,17 +63,13 @@ left: 50%;
 transform: translate(-50%, -50%);
 color: #fff;
 font-weight: bolder;
-font-family: "Luminari, fantasy";
-color: transparent;
--webkit-text-fill-color: #fff; /* Relleno blanco (para navegadores basados en WebKit) */
--webkit-text-stroke-width: 2px; /* Ancho del borde */
--webkit-text-stroke-color: #000; /* Color del borde (para navegadores basados en WebKit) */
+font-family: "Luminari, fantasy";/* Color del borde (para navegadores basados en WebKit) */
 }
 
 //Fondo animado
 .bg {
 animation:slide 3s ease-in-out infinite alternate;
-background-image: linear-gradient(-60deg, rgb(221, 137, 201) 50%, rgb(255, 255, 255) 50%);
+background-image: linear-gradient(-60deg, rgb(0, 0, 0) 50%, rgb(221, 255, 0) 50%);
 bottom:0;
 left:-50%;
 opacity:.5;
@@ -110,4 +100,14 @@ animation-duration:5s;
 .col{
 align-items: center !important;
 margin: auto;
+}
+
+ion-footer {
+--ion-background-color: #000000;
+--ion-text-color: white;
+}
+
+ion-header {
+--ion-background-color: #000000;
+--ion-text-color: white;
 }

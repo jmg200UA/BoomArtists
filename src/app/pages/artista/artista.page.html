@@ -10,6 +10,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+<!-- Fondo animado -->
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
   <ion-card-content style="display: flex; align-items: center;">
     <ion-thumbnail style="flex-basis: 33%;">
       <div style="width: 100%;">
@@ -23,6 +28,9 @@
 
     <!-- Lista para mostrar las 5 canciones más escuchadas -->
     <ion-list>
+      <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
       <ion-item *ngFor="let track of topTracks; let i = index; let j = index">
         <ion-thumbnail slot="start">
           <img [src]="topYT[j]?.items[0].snippet.thumbnails.default.url" alt="Imagen track">

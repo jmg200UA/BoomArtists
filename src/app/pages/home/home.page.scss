@@ -1,35 +1,7 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
 //Fondo animado
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, rgb(221, 137, 201) 50%, rgb(255, 255, 255) 50%);
+  background-image: linear-gradient(-60deg, rgb(0, 0, 0) 50%, rgb(221, 255, 0) 50%);
   bottom:0;
   left:-50%;
   opacity:.5;
@@ -59,15 +31,24 @@
 
 //Cartas apartados
 .cartas{
-  border: 5px solid #fff;
-  color: #FF4977;
-  background-color: #f5f2f5;
+  margin-top: 50px;
+  box-shadow: 10px 30px 20px rgba(0, 0, 0, 2);
+  border-radius: 50%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #000;
 }
 
 
 .cartas:hover{
   transform: scale(1.05);
   cursor: pointer;
+}
+
+.divcartas{
+  margin-top: 50px;
 }
 
 ion-card{
@@ -89,20 +70,52 @@ ion-card{
   // color:rgb(15, 3, 44);
   color: #fff;
   position: relative;
+  animation: slideIn 1s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .title{
   //color:rgb(15, 3, 44);
   //color: #fff;
+  font-size:28px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  color: #fff;
+  font-weight: bolder;
+  font-family: "Luminari, fantasy";/* Color del borde (para navegadores basados en WebKit) */
 }
 
 .cardtit{
   font-family: "Dela Gothic One", Sans-serif;
   font-weight: bold;
+  color: #000;
 }
 
+.fecha{
+  color: #000;
+  // color: #d4ff00;
+  // color: transparent;
+  // -webkit-text-fill-color: #d4ff00; /* Relleno blanco (para navegadores basados en WebKit) */
+  // -webkit-text-stroke-width: 0.8px; /* Ancho del borde */
+  // -webkit-text-stroke-color: #000; /* Color del borde (para navegadores basados en WebKit) */
+}
+
+ion-footer {
+  --ion-background-color: #000000;
+  --ion-text-color: white;
+}
+
+ion-header {
+  --ion-background-color: #000000;
+  --ion-text-color: white;
+}
