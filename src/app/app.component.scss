@@ -1,20 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+*{
+  font-family: 'Lilita One', cursive;
+}
+
 ion-footer {
   --ion-background-color: #000000;
   --ion-text-color: white;
 }
 
 ion-header {
-  --ion-background-color: #000000;
-  --ion-text-color: white;
+  --ion-background-color: #D3A8FF;
+  --ion-text-color: #ffffff;
 }
 
 .pags{
-  --ion-background-color: rgba(0, 0, 0, 0.5);
+  --ion-background-color: #D3A8FF;
+  font-family: 'Lilita One', cursive;
+}
+
+.seccion{
+  font-family: 'Lilita One', cursive;
 }
 
 ion-list {
-  --ion-background-color: rgba(0, 0, 0, 0.5);
-  --ion-text-color: white;
+  --ion-background-color: #D3A8FF;
+  --ion-text-color: #ffffff;
   height: 200px;
   margin-top: -10px;
 }
@@ -24,6 +35,5 @@ ion-item, ion-title{
 }
 
 ion-menu{
-  --ion-background-color: rgba(0, 0, 0, 0.5);
+  --ion-background-color: #d4a8ff21;
 }
-

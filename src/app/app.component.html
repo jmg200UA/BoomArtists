@@ -8,9 +8,9 @@
       </ion-header>
       <ion-content>
         <ion-list class="pags">
-          <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
+          <ion-menu-toggle auto-hide="false" *ngFor="let page of pages; let i = index">
             <ion-item  [routerLink]="[page.url]" routerDirection="root" [class.active]="currentPage === page.url">
-              <ion-label>{{ page.title }}</ion-label>
+              <ion-label class="seccion" [id]="i"> > {{ page.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

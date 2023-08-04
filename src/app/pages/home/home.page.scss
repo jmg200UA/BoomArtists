@@ -1,7 +1,17 @@
+//Fuentes
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sonsie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Gluten:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Gluten:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Aclonica&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 //Fondo animado
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, rgb(0, 0, 0) 50%, rgb(221, 255, 0) 50%);
+  background-image: linear-gradient(-60deg, #FF4977 50%, #F2E205 50%);
   bottom:0;
   left:-50%;
   opacity:.5;
@@ -32,19 +42,24 @@
 //Cartas apartados
 .cartas{
   margin-top: 50px;
-  box-shadow: 10px 30px 20px rgba(0, 0, 0, 2);
-  border-radius: 50%;
-  width: 70%;
+  box-shadow: 10px 30px 25px #29235C;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid #000;
+  background-color: #04D9D9;
+  border: 3px solid #ffffff;
 }
 
 
 .cartas:hover{
   transform: scale(1.05);
   cursor: pointer;
+  background-color: #F25E86;
+  border: 3px solid #04D9D9;
+  
+}
+.cartas:hover .cardtit{
+  color: #04D9D9;
 }
 
 .divcartas{
@@ -68,7 +83,7 @@ ion-card{
 .toolbar{
   // background-color: #fff;
   // color:rgb(15, 3, 44);
-  color: #fff;
+  color: #69409E;
   position: relative;
   animation: slideIn 1s;
 }
@@ -85,24 +100,44 @@ ion-card{
 .title{
   //color:rgb(15, 3, 44);
   //color: #fff;
-  font-size:28px;
+  font-size:45px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: #ffffff;
   font-weight: bolder;
-  font-family: "Luminari, fantasy";/* Color del borde (para navegadores basados en WebKit) */
+  font-family: lobster, sans-serif;/* Color del borde (para navegadores basados en WebKit) */
+
+  border: 2px solid #29235C;
+  height: 50px;
+  background-color: #D3A8FF;
+}
+
+.marca {
+  font-size: 30px; /* Tamaño de fuente del símbolo */
+  color: #ffffff; /* Color del símbolo */
+  vertical-align: middle; /* Alinear verticalmente con el texto */
+  margin-left: -5px; /* Espacio entre el título y el símbolo */
+  font-family: lobster, sans-serif;
+
+  //contorno
+  -webkit-text-stroke: 0px;
 }
 
 .cardtit{
-  font-family: "Dela Gothic One", Sans-serif;
+  font-size: 27px;
   font-weight: bold;
-  color: #000;
+  color: #F25E86;
+  font-family: 'Lilita One', cursive;
+  font-style: bold;
+  font-weight: 400;
 }
 
 .fecha{
-  color: #000;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'Lilita One', cursive;
   // color: #d4ff00;
   // color: transparent;
   // -webkit-text-fill-color: #d4ff00; /* Relleno blanco (para navegadores basados en WebKit) */
@@ -111,11 +146,11 @@ ion-card{
 }
 
 ion-footer {
-  --ion-background-color: #000000;
+  --ion-background-color: #B78DF2;
   --ion-text-color: white;
 }
 
 ion-header {
-  --ion-background-color: #000000;
+  --ion-background-color: #ffffff;
   --ion-text-color: white;
 }
