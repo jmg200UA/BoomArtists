@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Gluten:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Aclonica&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
 
 //Fondo animado
 .bg {
@@ -56,7 +57,7 @@
   cursor: pointer;
   background-color: #F25E86;
   border: 3px solid #04D9D9;
-  
+
 }
 .cartas:hover .cardtit{
   color: #04D9D9;
@@ -98,8 +99,6 @@ ion-card{
 }
 
 .title{
-  //color:rgb(15, 3, 44);
-  //color: #fff;
   font-size:45px;
   position: absolute;
   top: 50%;
@@ -107,7 +106,7 @@ ion-card{
   transform: translate(-50%, -50%);
   color: #ffffff;
   font-weight: bolder;
-  font-family: lobster, sans-serif;/* Color del borde (para navegadores basados en WebKit) */
+  font-family: lobster, sans-serif !important;
 
   border: 2px solid #29235C;
   height: 50px;
